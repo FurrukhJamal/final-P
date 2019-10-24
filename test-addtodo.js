@@ -1,9 +1,11 @@
 import React from "react";
 import {View, Text, StyleSheet, Button, TextInput} from "react-native";
-import store from "./store";
+// used with redux import store from "./store";
 import {addtodo} from "./reducer"
 
-export default class Addtodo extends React.Component {
+import {connect} from "react-redux"
+
+class Addtodo extends React.Component {
 
   state = {
     value : "",
@@ -27,7 +29,9 @@ export default class Addtodo extends React.Component {
       value: ""
     })
 
-    store.dispatch(addtodo(this.state.value))
+    //used with redux store.dispatch(addtodo(this.state.value))
+    /*Using react redux*/
+    this.props.ADD(this.state.value)
 
   }
 
@@ -69,3 +73,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+//binding addtodo imported from reducer as ADD prop so that it can add to store
+export default connect(null, {ADD : addtodo})(Addtodo)

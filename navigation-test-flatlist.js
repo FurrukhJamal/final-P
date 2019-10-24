@@ -1,6 +1,7 @@
 import React from "react";
 import {FlatList, Text, Button, TextInput, View, StyleSheet } from "react-native";
-import store from "./store"
+// used with redux import store from "./store"
+import {connect} from "react-redux";
 
 const renderItem = obj =>{
   console.log(obj.item)
@@ -10,16 +11,17 @@ const renderItem = obj =>{
 }
 
 
-export default class Todolist extends React.Component {
+class Todolist extends React.Component {
   render() {
-    console.log("params are", this.props.navigation.getParam("list"))
-    const todos = store.getState().todo
+    //console.log("params are", this.props.navigation.getParam("list"))
+    //used with redux const todos = store.getState().todo
     return (
       <View>
         <FlatList
           renderItem = {renderItem}
           //used when redux is not used data = {this.props.navigation.getParam("list")}
-          data = {todos}
+          // used with redux data = {todos}
+          data = {this.props.todos}
           keyExtractor = {(item, index) => index.toString()} />
 
 
@@ -32,9 +34,6 @@ export default class Todolist extends React.Component {
 
 
 
-
-
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -43,3 +42,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+
+
+//React Redux
+const mapStateToProps = state => ({
+  todos : state.todo
+})
+
+export default connect(mapStateToProps)(Todolist)
