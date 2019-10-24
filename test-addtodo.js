@@ -1,24 +1,33 @@
 import React from "react";
 import {View, Text, StyleSheet, Button, TextInput} from "react-native";
+import store from "./store";
+import {addtodo} from "./reducer"
 
 export default class Addtodo extends React.Component {
 
   state = {
     value : "",
-    todos : []
+    //todos : []
   }
 
   submit = ()=> {
     console.log("TextInput value is", this.state.value)
-    this.setState(previousstate => {
+    /*Used when not using redux*/
+    // this.setState(previousstate => {
+    //
+    //
+    //   return {
+    //     value : "",
+    //     todos : [...previousstate.todos, this.state.value]
+    //   }
+    //
+    // })
 
-
-      return {
-        value : "",
-        todos : [...previousstate.todos, this.state.value]
-      }
-
+    this.setState({
+      value: ""
     })
+
+    store.dispatch(addtodo(this.state.value))
 
   }
 

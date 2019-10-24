@@ -5,6 +5,7 @@ import {Provider, connect} from 'react-redux'
 import {createSwitchNavigator, createAppContainer} from "react-navigation";
 import Todolist from "./navigation-test-flatlist"
 import Addtodo from "./test-addtodo";
+import store from "./store"
 
 // const addtodo = (todo) => ({
 //   type: "Add Item",
@@ -118,7 +119,9 @@ const AppContainer = createAppContainer(AppNavigator)
 export default class App extends React.Component {
   render(){
     return(
-      <AppContainer/>
+      <Provider store= {store}>
+        <AppContainer/>
+      </Provider>
     )
   }
 }
