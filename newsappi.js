@@ -11,7 +11,7 @@ export const getNewsData = async (source) => {
           title : obj.title,
           detail : obj.description,
           image : obj.urlToImage,
-          fullDetail : obj.url
+          fullDetail : obj.url,
         }
       )
     })

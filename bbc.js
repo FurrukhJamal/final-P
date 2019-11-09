@@ -40,7 +40,9 @@ export default class Bbc extends React.Component {
   }
 
   handleNewsdetail = (newsobject)=> {
-    console.log(newsobject)
+    console.log("News detail object is", newsobject)
+    this.props.navigation.navigate("newsdetail", {newsDetail : newsobject})
+
   }
 
 

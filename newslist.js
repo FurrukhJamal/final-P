@@ -11,7 +11,9 @@ const renderNewsList = (obj) => (
       <Image
         style = {{height : 75, width : 75}}
         source = {{uri : obj.item.image}}/>
-      <Text style = {{paddingLeft : 10, fontSize : 15}}>{obj.item.title}</Text>
+
+        <Text style = {{paddingLeft : 10, fontSize : 15,}}>{obj.item.title}</Text>
+
     </View>
   </TouchableOpacity>
 )
@@ -41,7 +43,8 @@ const styles = StyleSheet.create({
 
   newsLine : {
     flexDirection : "row",
-    alignItems : "center"
+    alignItems : "center",
+
   }
 })
 
