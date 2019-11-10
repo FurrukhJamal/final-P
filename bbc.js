@@ -58,14 +58,13 @@ export default class Bbc extends React.Component {
       })
       return (
         <View style ={styles.container}>
-          <Text>Bbc page</Text>
-          <TouchableOpacity
-            onPress = {()=> this.props.navigation.navigate("newsdetail")}>
-            <Text>touch</Text>
-            <Text>{this.props.navigation.state.routeName}</Text>
-          </TouchableOpacity>
-
-            <Newslist
+        <Text>Bbc page</Text>
+        <TouchableOpacity
+          onPress = {()=> this.props.navigation.navigate("newsdetail")}>
+          <Text>touch</Text>
+          <Text>{this.props.navigation.state.routeName}</Text>
+        </TouchableOpacity>
+        <Newslist
               newsData = {dataWithFunction}
               />
 
