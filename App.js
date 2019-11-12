@@ -12,6 +12,7 @@ import Favorites from "./favorites.js"
 import News from "./News";
 import Newsdetailpage from "./newsdetailpage";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import SavedNewsDetailPage from "./savedNewsDetail";
 
 const BbcStack = createStackNavigator({
   "news": Bbc,
@@ -56,7 +57,7 @@ const BbcStack = createStackNavigator({
 
 const savedStack = createStackNavigator({
   "savedpage" : Favorites,
-  "saved-detail" : Newsdetailpage
+  "saved-detail" : SavedNewsDetailPage
 },
  {
    initialRouteName : "savedpage"

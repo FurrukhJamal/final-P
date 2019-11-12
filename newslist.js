@@ -49,7 +49,6 @@ const styles = StyleSheet.create({
     //added
     //flex: 1
     width: Dimensions.get('window').width - 40,
-    backgroundColor : "yellow"
 
   }
 })
