@@ -17,7 +17,7 @@ class Newsdetailpage extends React.Component {
     //USED WITH REDUX store.dispatch(saveNews(data));
 
     this.props.SAVE(data)
-    console.log("redux store is", store.getState())
+    //console.log("redux store is", store.getState())
 
     //redirecting to either bbc news page or cnn
     if (data.source === "cnn" || data.source === "bbc-news" )
@@ -33,7 +33,7 @@ class Newsdetailpage extends React.Component {
     //USED WITH REDUX const savedNews = store.getState().savedNews
 
     const savedNews = this.props.savedNews
-    console.log("savednews is", savedNews)
+    //console.log("savednews is", savedNews)
 
     //add a boolean key in data to control the display of save button below
     data["issaved"] = false
@@ -46,7 +46,7 @@ class Newsdetailpage extends React.Component {
 
     })
 
-    console.log("news detail object with flag for button", data)
+    //console.log("news detail object with flag for button", data)
     return(
       <View style = {styles.container}>
         <Image style = {styles.image}

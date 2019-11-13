@@ -21,14 +21,14 @@ export default class Bbc extends React.Component {
 
 
   componentDidMount(){
-    console.log("component loaded")
+    //console.log("component loaded")
     this.newssearch()
     setInterval(this.newssearch, 1000 * 60 * 5 )
   }
 
 
   newssearch = async() => {
-    console.log("inside")
+    //console.log("inside")
     //for visual loading wheel everytime data is refreshed
     this.setState({
       testdata : null
