@@ -9,11 +9,11 @@ class Favorites extends React.Component {
 
 
   handleSelect = (savedNewsDetail) => {
-    console.log("Saved news detail is", savedNewsDetail)
+    //console.log("Saved news detail is", savedNewsDetail)
     this.props.navigation.navigate("saved-detail", {savedDetail : savedNewsDetail})
   }
   render() {
-    console.log(this.props.savedNews)
+    //console.log(this.props.savedNews)
     const data = this.props.savedNews
     data.map((obj) => {
       obj.onSelectDetail = this.handleSelect

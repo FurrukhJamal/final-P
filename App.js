@@ -9,10 +9,33 @@ import store from "./store"
 import Cnn from "./cnn";
 import Bbc from "./bbc";
 import Favorites from "./favorites.js"
-import News from "./News";
 import Newsdetailpage from "./newsdetailpage";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import SavedNewsDetailPage from "./savedNewsDetail";
+
+/*BUG FIX*/
+/*START*/
+/*was getting an error
+"Setting a timer for a long period of time, i.e. multiple minutes,
+ is a performance and correctness issue on Android as it keeps the
+ timer module awake, and timers can only be called when
+ the app is in the foreground."
+
+ So found on stackoverflow to paste the below code at the start of
+ codebase in the following link
+
+ https://stackoverflow.com/questions/44603362/setting-a-timer-for-a-long-period-of-time-i-e-multiple-minutes*/
+import { YellowBox } from 'react-native';
+import _ from 'lodash';
+
+YellowBox.ignoreWarnings(['Setting a timer']);
+const _console = _.clone(console);
+console.warn = message => {
+  if (message.indexOf('Setting a timer') <= -1) {
+    _console.warn(message);
+  }
+};
+/*END*/
 
 const BbcStack = createStackNavigator({
   "news": Bbc,

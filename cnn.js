@@ -22,14 +22,14 @@ export default class Cnn extends React.Component {
 
 
   componentDidMount(){
-    console.log("component loaded")
+    //console.log("component loaded")
     this.newssearch()
     setInterval(this.newssearch, 1000 * 60 * 5 )
   }
 
 
   newssearch = async() => {
-    console.log("inside")
+    //console.log("inside")
 
     //for visual loading wheel everytime data is refreshed
     this.setState({
@@ -38,7 +38,7 @@ export default class Cnn extends React.Component {
 
 
     let data = await getNewsData("cnn")
-    console.log(data)
+    //console.log(data)
     this.setState({
       testdata : data
     })
@@ -46,7 +46,7 @@ export default class Cnn extends React.Component {
   }
 
   handleNewsdetail = (newsobject)=> {
-    console.log("News detail object is", newsobject)
+    //console.log("News detail object is", newsobject)
     this.props.navigation.navigate("newsdetail", {newsDetail : newsobject})
 
   }

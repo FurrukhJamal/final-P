@@ -36,7 +36,7 @@ export default class Bbc extends React.Component {
 
 
     let data = await getNewsData("bbc-news")
-    console.log(data)
+    //console.log(data)
     this.setState({
       testdata : data
     })
@@ -44,7 +44,7 @@ export default class Bbc extends React.Component {
   }
 
   handleNewsdetail = (newsobject)=> {
-    console.log("News detail object is", newsobject)
+    //console.log("News detail object is", newsobject)
     this.props.navigation.navigate("newsdetail", {newsDetail : newsobject})
 
   }
