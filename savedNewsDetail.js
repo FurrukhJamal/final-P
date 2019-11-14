@@ -11,18 +11,20 @@ export default class SavedNewsDetail extends React.Component {
   render() {
     const data = this.props.navigation.getParam("savedDetail")
     return (
-      <ScrollView style = {styles.container}>
-        <Image style = {styles.image}
-          source = {{uri: data.image}}/>
-        <Text style = {styles.heading}>{data.title}</Text>
-        <Text style = {styles.detail}>{data.detail}</Text>
-        <View style = {styles.source}>
-          <Text style= {{fontWeight : "bold"}} >Source:</Text>
-          {(data.source === "cnn") ? (<Text> CNN</Text>) : (<Text> BBC</Text>)}
+      <ScrollView>
+        <View style = {styles.container}>
+          <Image style = {styles.image}
+            source = {{uri: data.image}}/>
+          <Text style = {styles.heading}>{data.title}</Text>
+          <Text style = {styles.detail}>{data.detail}</Text>
+          <View style = {styles.source}>
+            <Text style= {{fontWeight : "bold"}} >Source:</Text>
+            {(data.source === "cnn") ? (<Text> CNN</Text>) : (<Text> BBC</Text>)}
+          </View>
+          <TouchableOpacity style = {{marginTop : 10}} onPress = {this.getDetail}>
+            <Text style = {{color : "blue", textDecorationLine : "underline"}}>Read More</Text>
+          </TouchableOpacity>
         </View>
-        <TouchableOpacity style = {{marginTop : 10}} onPress = {this.getDetail}>
-          <Text style = {{color : "blue", textDecorationLine : "underline"}}>Read More</Text>
-        </TouchableOpacity>
       </ScrollView>
     )
   }
