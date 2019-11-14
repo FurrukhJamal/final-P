@@ -1,5 +1,5 @@
 import React from "react";
-import {Image, StyleSheet, View, Text, TouchableOpacity} from "react-native";
+import {ScrollView, Image, StyleSheet, View, Text, TouchableOpacity} from "react-native";
 import {Linking} from "expo";
 
 export default class SavedNewsDetail extends React.Component {
@@ -11,7 +11,7 @@ export default class SavedNewsDetail extends React.Component {
   render() {
     const data = this.props.navigation.getParam("savedDetail")
     return (
-      <View style = {styles.container}>
+      <ScrollView style = {styles.container}>
         <Image style = {styles.image}
           source = {{uri: data.image}}/>
         <Text style = {styles.heading}>{data.title}</Text>
@@ -23,7 +23,7 @@ export default class SavedNewsDetail extends React.Component {
         <TouchableOpacity style = {{marginTop : 10}} onPress = {this.getDetail}>
           <Text style = {{color : "blue", textDecorationLine : "underline"}}>Read More</Text>
         </TouchableOpacity>
-      </View>
+      </ScrollView>
     )
   }
 }
